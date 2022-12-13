@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font:pixelsize=25:antialias=true:autohint=true";
+// static char *font = "CaskaydiaCove Nerd Font:pixelsize=25:antialias=true:autohint=true";
+static char *font = "Fira Code Nerd Font:pixelsize=25:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
@@ -245,6 +246,10 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
+static char *openurlcmd[] = {
+  "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL
+};
+
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
@@ -259,6 +264,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ MODKEY,               XK_o,           externalpipe,   {.v = openurlcmd} },
 	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	{ MODKEY,               XK_k,           kscrollup,      {.i = 1}  },
