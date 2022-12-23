@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-// static char *font = "CaskaydiaCove Nerd Font:pixelsize=25:antialias=true:autohint=true";
+/* static char *font = "CaskaydiaCove Nerd Font:pixelsize=25:antialias=true:autohint=true"; */
 static char *font = "Fira Code Nerd Font:pixelsize=25:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
@@ -247,7 +247,7 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (ControlMask|ShiftMask)
 
 static char *openurlcmd[] = {
-  "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL
+  "/bin/sh", "-c", "st-urlhandler", "externalpipe", NULL
 };
 
 static Shortcut shortcuts[] = {
